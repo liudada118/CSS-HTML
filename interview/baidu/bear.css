@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.bear{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.head{
+    position: relative;
+    height: 100px;
+    width: 100px;
+}
+.face{
+    height: 100%;
+    width: 100%;
+    border-radius: 70% 70% 90% ;
+    border: 2px solid black;
+    position: absolute;
+    z-index: 1;
+    /* overflow: hidden; */
+    background-color: white;
+}
+.left-ear{
+    width: 20px;
+    height: 20px;
+    border-radius: 100% 70% 50% 70%;
+    border: 2px solid black;
+    position: absolute;
+}
+.right-ear{
+    width: 20px;
+    height: 20px;
+    border-radius: 70% 100% 50% 70%;
+    border: 2px solid black;
+    position: absolute;
+    right:  0;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 750px;
+            height: 370px;
+            outline: 1px solid blue;
+            white-space: nowrap;
+            font-size: 0;
+            transition: transform ease 1s;
+        }
+
+        /* 第一层的子元素 */
+        .container>img {
+            width: 750px;
+            height: 370px;
+            display: inline-block;
+            transition: transform ease 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="https://yanxuan.nosdn.127.net/e1d32c538a9fcf420411592746098ad2.jpg" alt="">
+        <img src="https://yanxuan.nosdn.127.net/7e01b30c2c440e118cf09e14c7a69266.jpg" alt="">
+        <img src="https://yanxuan.nosdn.127.net/94408b4d014ce6774e8f768bdf9b6f60.jpg" alt="">
+        <img src="https://yanxuan.nosdn.127.net/e14d684c9dc43de2af5215c3d49b6870.jpg" alt="">
+    </div>
+    <script>
+        let container = document.querySelector('.container')
+        let chindren = container.querySelectorAll('img')
+        let position = 0
+        // let swiper = () =>{
+        //     if(position<=1){
+        //         container.appendChild(chindren[position])
+        //         position ++
+        //         container.style.transform = `translateX(${-100 *Position}%)`
+        //     }else{
+        //         container.removeChild(chindren[0])
+        //         container.appendChild(chindren[0])  
+        //     }
+            
+        // }
+        let nextPic = () => {
+            // let nextPosition = (position + 1) % chindren.length
+            // let current = chindren[position]
+            // let next = chindren[nextPosition]
+            // // 
+            // // 初始位置
+            // current.style.transform = `translateX(${-100 * position}%)`
+            // next.style.transform = `translateX(${100 - 100 * nextPosition}%)`
+
+
+            // // 动画完之后终止位置  在原来的基础上 往左减100%
+            //  current.style.transform = `translateX(${-100 *position -100}%)`
+            // next.style.transform = `translateX(${100 -100 *nextPosition -100}%)`
+            position++
+            if (position <= 1) {
+                for (let i = 0; i < chindren.length; i++) {
+                    let current = chindren[i]
+                    current.style.transform = `translateX(${-100 * position}%)`
+                }
+            }
+            console.log(chindren[0])
+            let a = chindren[0]
+            if (position > 1) {
+                let chindren = container.querySelectorAll('img')
+                let a = chindren[0]
+                container.removeChild(a)
+                container.appendChild(a)
+                console.log(chindren)
+                for (let i = 0; i < chindren.length; i++) {
+                    let current = chindren[i]
+                    current.style.transform = `translateX(${-100*position }%)`
+                }
+                // container.removeChild(a)
+            }
+        }
+    </script>
+</body>
+
+</html>
